@@ -24,7 +24,7 @@ const Softwares = ({ history }) => {
           console.log(error);
         } else {
           setProducts(data);
-          console.log(data);
+
           setDataLoaded(true);
         }
       })
@@ -73,8 +73,6 @@ const Softwares = ({ history }) => {
         }
       }
     });
-
-  console.log(productsMap);
 
   const handleClick = (product) => {
     if (isAuthenticated()) {

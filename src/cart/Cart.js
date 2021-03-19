@@ -17,8 +17,6 @@ import { Link } from "react-router-dom";
 import { isAuthenticated } from "../auth/helper";
 
 const Cart = ({ history }) => {
-  const { token, user } = isAuthenticated();
-
   const [cartItems, setCartItems] = useState([]);
   const [reload, setReload] = useState(false);
 

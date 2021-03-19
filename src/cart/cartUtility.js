@@ -47,7 +47,6 @@ export const addItemtoCart = (props) => {
       });
     }
   }
-  console.log(cartItems);
   localStorage.setItem("cartItems", JSON.stringify(cartItems));
 };
 
@@ -136,7 +135,6 @@ export const updateCartItemCount = (itemId, itemCount) => {
 };
 
 export const cartEmpty = () => {
-  console.log("inside");
   if (typeof window !== "undefined") {
     let cartItems = JSON.parse(localStorage.getItem("cartItems"));
     cartItems[0].cart = [];

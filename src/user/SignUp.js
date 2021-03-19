@@ -14,9 +14,9 @@ const SignUp = (props) => {
   const { name, phoneNumber, email, password, error, success } = values;
 
   const handleChange = (name) => (event) => {
-    console.log("NAME", name);
-    console.log("EVENT", event.target.value);
-    if (name === "phoneNumber" && event.target.value.length != 10)
+    // console.log("NAME", name);
+    // console.log("EVENT", event.target.value);
+    if (name === "phoneNumber" && event.target.value.length !== 10)
       setValues({
         ...values,
         [name]: event.target.value,

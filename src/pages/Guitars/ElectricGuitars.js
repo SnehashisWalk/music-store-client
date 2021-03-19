@@ -24,7 +24,6 @@ const ElectricGuitars = ({ history }) => {
           console.log(error);
         } else {
           setProducts(data);
-          console.log(data);
           setDataLoaded(true);
         }
       })
@@ -73,9 +72,6 @@ const ElectricGuitars = ({ history }) => {
         }
       }
     });
-
-  console.log(products);
-  console.log("MAP", productsMap);
 
   const handleClick = (product) => {
     if (isAuthenticated()) {

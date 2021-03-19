@@ -12,7 +12,6 @@ import {
   Button,
   Form,
   Jumbotron,
-  ListGroupItem,
 } from "react-bootstrap";
 import { FaRupeeSign, FaPlus } from "react-icons/fa";
 import { isAuthenticated } from "../auth/helper";
@@ -73,11 +72,6 @@ const STATE_LIST = [
 const Profile = () => {
   const [redirect, setRedirect] = useState(false);
 
-  useEffect(() => {
-    isAuthenticated();
-    preload();
-  }, [redirect]);
-
   const { user } = isAuthenticated();
   const userToken = isAuthenticated() && isAuthenticated().token;
   const userId = isAuthenticated() && isAuthenticated().user._id;
@@ -99,6 +93,11 @@ const Profile = () => {
     const userAddresses = await fetchUserAddresses(userId, userToken);
     setFetchedUserAddresses(userAddresses);
   };
+
+  useEffect(() => {
+    isAuthenticated();
+    preload();
+  }, [redirect]);
 
   const loadUserPurchaseList = async () => {
     await userPurchaseList(userId, userToken)
@@ -126,9 +125,9 @@ const Profile = () => {
 
   const handleChange = (field) => (event) => {
     const value = event.target.value;
-    console.log(value);
+    // console.log(value);
     setAddressValues({ ...addressValues, [field]: value });
-    console.log(addressValues);
+    // console.log(addressValues);
   };
 
   const handleSubmit = async (event) => {
@@ -149,7 +148,7 @@ const Profile = () => {
       });
       handleClose();
       setRedirect(!redirect);
-      console.log(data.message);
+//      console.log(data.message);
     }
   };
 

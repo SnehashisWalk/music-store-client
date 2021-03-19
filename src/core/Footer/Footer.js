@@ -53,16 +53,16 @@ const Footer = () => {
               justifyContent: "space-evenly",
             }}
           >
-            <a href="" style={{ margin: "2px", flex: "1" }}>
+            <a href="/" style={{ margin: "2px", flex: "1" }}>
               <FaFacebook />
             </a>
-            <a href="" style={{ margin: "2px", flex: "1" }}>
+            <a href="/" style={{ margin: "2px", flex: "1" }}>
               <FaDiscord />
             </a>
-            <a href="" style={{ margin: "2px", flex: "1" }}>
+            <a href="/" style={{ margin: "2px", flex: "1" }}>
               <FaGooglePlus />
             </a>
-            <a href="" style={{ margin: "2px", flex: "1" }}>
+            <a href="/" style={{ margin: "2px", flex: "1" }}>
               <FaInstagram />
             </a>
           </div>

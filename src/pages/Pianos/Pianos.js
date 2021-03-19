@@ -24,7 +24,6 @@ const Pianos = ({ history }) => {
           console.log(error);
         } else {
           setProducts(data);
-          console.log(data);
           setDataLoaded(true);
         }
       })
@@ -74,7 +73,6 @@ const Pianos = ({ history }) => {
       }
     });
 
-  console.log(productsMap);
 
   const handleClick = (product) => {
     if (isAuthenticated()) {

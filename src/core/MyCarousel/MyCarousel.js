@@ -29,7 +29,7 @@ const MyCarousel = () => {
 
   return (
     <Col className="d-flex justify-content-center">
-      {navigator.platform == "Win32" ? (
+      {navigator.platform === "Win32" ? (
         <>
           <Carousel
             activeIndex={index}
@@ -96,6 +96,7 @@ const MyCarousel = () => {
                   src={carouselItem.imageMobile}
                   title="New Releases"
                   style={{ height: "50vh" }}
+                  alt={carouselItem.title}
                 />
               </Carousel.Item>
             );

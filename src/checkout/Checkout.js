@@ -40,11 +40,17 @@ const Checkout = () => {
 
   const [selectedAddress, setSelectedAddress] = useState(false);
 
-  useEffect(async () => {
-    setCartItems(loadUserCartItemsFromLocalStorage());
-    const userAddresses = await fetchUserAddresses(user._id, token);
-    setUserAddresses(userAddresses);
-  }, [reload]);
+  useEffect(() => {
+    async function loadUserCartAndAddress() {
+      setCartItems(loadUserCartItemsFromLocalStorage());
+      const userAddresses = await fetchUserAddresses(user._id, token);
+      setUserAddresses(userAddresses);
+    }
+    loadUserCartAndAddress();
+    return () => {
+      loadUserCartAndAddress();
+    };
+  }, [reload, user._id, token]);
 
   const checkLoginContent = () => {
     return (
@@ -93,7 +99,7 @@ const Checkout = () => {
     setSelectedAddress(address);
     const deliveryCards = document.getElementById("delivery-cards");
     for (let i = 0; i < deliveryCards.children.length; i++) {
-      if (deliveryCards.children[i].id == `id${addressId}`) {
+      if (deliveryCards.children[i].id === `id${addressId}`) {
         deliveryCards.children[i].style.backgroundColor = "#B9D9EB";
         setDisableAddressBtn(true);
       } else {
@@ -307,7 +313,6 @@ const Checkout = () => {
 
   const paymentMethod = async () => {
     if (cartItems[0]?.cart?.length > 0 && selectedAddress) {
-      console.log("started");
       setTransactionError(false);
       await createOrder(user._id, token, {
         transactionId: uuidv4(),
@@ -320,7 +325,7 @@ const Checkout = () => {
       });
       cartEmpty();
     } else {
-      if (cartItems[0]?.cart?.length == 0) {
+      if (cartItems[0]?.cart?.length === 0) {
         setTransactionError({
           message: "Please add items to the cart.",
         });

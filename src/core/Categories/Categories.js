@@ -3,10 +3,6 @@ import { Card, Col, Container, Row, CardDeck } from "react-bootstrap";
 import { withRouter } from "react-router";
 
 const Categories = ({ history }) => {
-  const handleClick = () => {
-    alert("clicked");
-  };
-
   return (
     <>
       <div style={{ textAlign: "center", margin: "3rem" }}>

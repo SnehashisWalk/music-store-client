@@ -12,7 +12,6 @@ import {
 import { getProductImages } from "../core/helper/imageapicalls";
 import {
   updateCartItemCount,
-  getUniqueItemCount,
   removeCartItem,
 } from "./cartUtility";
 import { FaMinus, FaPlus, FaRupeeSign } from "react-icons/fa";

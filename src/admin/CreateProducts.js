@@ -25,10 +25,8 @@ const CreateProducts = () => {
     description,
     price,
     stock,
-    photo,
     categories,
     category,
-    loading,
     error,
     createdProduct,
     formData,
@@ -59,7 +57,7 @@ const CreateProducts = () => {
       handleSubCategories(event.target.value);
     }
     setValues({ ...values, [name]: value });
-    };
+  };
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -218,8 +216,7 @@ const CreateProducts = () => {
             <Form.Control
               as="select"
               onChange={handleChange("subCategory")}
-              disabled={error}
-              disabled={subCategoryFieldState}
+              disabled={error || subCategoryFieldState}
             >
               <option>Select</option>
               {subcategories &&

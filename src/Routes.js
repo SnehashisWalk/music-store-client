@@ -12,7 +12,6 @@ import Drums from "./pages/Drums/Drums";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AdminRoute from "./auth/helper/AdminRoutes";
 import PrivateRoute from "./auth/helper/PrivateRoutes";
-import AdminDashboard from "./user/AdminDashboard";
 import Profile from "./user/Profile";
 import SignIn from "./user/SignIn";
 import SignUp from "./user/SignUp";
@@ -86,7 +85,6 @@ function Routes() {
         ></Route>
         <Route path="/signin" exact component={SignIn} />
         <Route path="/signup" exact component={SignUp} />
-        <AdminRoute path="/admin/dashboard" exact component={AdminDashboard} />
         <PrivateRoute path="/profile" exact component={Profile} />
         <Route path="/cart" exact component={Cart} />
         <PrivateRoute path="/user/cart" exact component={Cart} />
