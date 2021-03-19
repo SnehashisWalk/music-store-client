@@ -1,0 +1,16 @@
+.onHover:hover {
+  background-color: #007bff;
+  color: white;
+}
+.cardHover:hover {
+  z-index: 10;
+  box-shadow: 0 0 10px 10px rgb(0 0 0 / 15%);
+  transition: box-shadow 0.1s linear;
+  cursor: pointer;
+}
+
+.jumbotron {
+  background: #f0f8ff;
+  width: inherit;
+  border-radius: 0;
+}
